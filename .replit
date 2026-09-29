@@ -1,5 +1,3 @@
-[nix]
-channel = "stable-25_05"
 
-[agent]
-expertMode = true
+compile = "gcc tdas/*.c cancion.c database.c main.c -Wno-unused-result -o spotifind"
+run = "./spotifind"
