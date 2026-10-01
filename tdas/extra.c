@@ -10,7 +10,7 @@ char **leer_linea_csv(FILE *archivo, char separador) {
     int idx = 0;
 
     if (fgets(linea, MAX_LINE_LENGTH, archivo) == NULL)
-        return NULL;  // fin de fichero
+        return NULL;  
 
     // quitar salto de línea
     linea[strcspn(linea, "\r\n")] = '\0';
@@ -20,26 +20,24 @@ char **leer_linea_csv(FILE *archivo, char separador) {
         char *start;
 
         if (*ptr == '\"') {
-            // campo entrecomillado
-            ptr++;              // saltar la comilla inicial
+            
+            ptr++;          
             start = ptr;
-
-            // compactar contenido: convertir "" → " y copiar el resto
             char *dest = ptr;
             while (*ptr) {
                 if (*ptr == '\"' && *(ptr + 1) == '\"') {
-                    *dest++ = '\"';  // una comilla literal
-                    ptr += 2;        // saltar ambas
+                    *dest++ = '\"';  
+                    ptr += 2;        
                 }
                 else if (*ptr == '\"') {
-                    ptr++;           // fin del campo
+                    ptr++;         
                     break;
                 }
                 else {
                     *dest++ = *ptr++;
                 }
             }
-            *dest = '\0';        // terminar cadena
+            *dest = '\0';        // termina lacadena
 
             // ahora ptr apunta justo después de la comilla de cierre
             if (*ptr == separador) ptr++;
@@ -80,7 +78,7 @@ List *split_string(const char *str, const char *delim) {
       end--;
     }
 
-    // Copiar el token en un nuevo string
+    // Copiar el token en un nuevo string, agregar el nuevo string a la lista y conseguir el token sigu
     char *new_token = strdup(token);
 
     // Agregar el nuevo string a la lista

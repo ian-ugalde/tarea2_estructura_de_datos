@@ -3,11 +3,7 @@
 
 #include "tdas/list.h"
 
-/**
- * Representa una canción cargada desde el CSV.
- * artists es una List* de char* (un artista puede tener varios colaboradores,
- * separados por ';' en el CSV original).
- */
+
 typedef struct {
   int id;
   char *track_name;

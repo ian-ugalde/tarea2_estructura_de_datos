@@ -4,8 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// --- Comparadores para los Map (claves int y string) ---
-
+// Comparadores para los Map 
 static int is_equal_str(void *key1, void *key2) {
   return strcmp((char *)key1, (char *)key2) == 0;
 }
@@ -17,11 +16,7 @@ Database *database_create() {
   return db;
 }
 
-/**
- * Agrega "cancion" a la lista asociada a "clave" dentro de "mapa".
- * si la clave (genero o artista) no existe, crea su lista.
- * se usa strdup para la clave porque el buffer que entrega leer_linea_csv es estático y se sobrescribe en        cada línea
- */
+
 static void agregar_a_indice(Map *mapa, const char *clave, Cancion *cancion) {
   MapPair *par = map_search(mapa, (void *)clave);
   if (par == NULL) {
