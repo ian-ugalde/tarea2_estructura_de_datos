@@ -21,7 +21,7 @@ Este proyecto fue desarrollado en Replit y se ejecuta desde la **Shell**
 ### Requisitos previos
  
 - Replit.
-- El archivo `data/song_dataset_.csv` debe existir dentro del proyecto (no se incluye en el repositorio por su tamaño, debe descargarse aparte y ubicarse en esa ruta).
+- El archivo `data/song_dataset_.csv` debe existir dentro del proyecto (no se  incluye siempre en el repositorio por su tamaño, debe descargarse aparte y ubicarse en esa ruta en caso de ser necesario).
 
 ### Pasos para compilar y ejecutar
  
